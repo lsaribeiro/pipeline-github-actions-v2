@@ -48,3 +48,9 @@ jobs:
           git add .
           git commit -m "Adicionado arquivo com dados"
           git push origin dev
+
+
+  referenced_workflows:
+    workflows:
+      - workflow: Workflow1
+        ref: .github/workflows/workflow1.yml
