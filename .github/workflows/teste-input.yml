@@ -30,7 +30,7 @@ jobs:
 
       - name: Create and push branch dev
         run: |
-          pwd
+          ls -l
           git checkout -b dev
           git status
           git add dados.txt
