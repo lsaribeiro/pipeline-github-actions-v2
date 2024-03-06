@@ -17,18 +17,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NOME: ${{ github.event.inputs.nome }}
+      SOBRENOME: ${{ github.event.inputs.sobrenome }}
+      IDADE: ${{ github.event.inputs.idade }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       
       - name: Create file with inputs
         run: |
-          echo "Nome: ${{ github.event.inputs.nome }}" > dados.txt
-          echo "Sobrenome: ${{ github.event.inputs.sobrenome }}" >> dados.txt
-          echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
+          python template_jinja2.py
 
       - name: Create and push branch dev
         run: |
+          cat terraform_config.tf
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
           git checkout -b dev
