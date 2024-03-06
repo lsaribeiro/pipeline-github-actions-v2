@@ -23,6 +23,8 @@ jobs:
       NOME: ${{ github.event.inputs.nome }}
       SOBRENOME: ${{ github.event.inputs.sobrenome }}
       IDADE: ${{ github.event.inputs.idade }}
+      GITHUB_SHA: 3e932126ff38cf897c1a3ffc554270192baa39dd
+      GITHUB_WORKFLOW_SHA: 3e932126ff38cf897c1a3ffc554270192baa39dd
 
     steps:
       - name: Create String Artifact
