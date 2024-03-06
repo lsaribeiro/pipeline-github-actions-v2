@@ -1,4 +1,4 @@
-name: Create File and Push Workflow
+name: Create File and Push Workflow ${{ github.event.inputs.nome }}
 
 on:
   workflow_dispatch:
