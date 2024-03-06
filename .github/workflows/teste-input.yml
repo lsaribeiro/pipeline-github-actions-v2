@@ -1,0 +1,35 @@
+name: Create File and Push Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      nome:
+        description: 'Nome'
+        required: true
+      sobrenome:
+        description: 'Sobrenome'
+        required: true
+      idade:
+        description: 'Idade'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create file with inputs
+        run: |
+          echo "Nome: ${{ github.event.inputs.nome }}" > dados.txt
+          echo "Sobrenome: ${{ github.event.inputs.sobrenome }}" >> dados.txt
+          echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create and push branch dev
+        run: |
+          git checkout -b dev
+          git add dados.txt
+          git commit -m "Adicionado arquivo com dados"
+          git push origin dev
