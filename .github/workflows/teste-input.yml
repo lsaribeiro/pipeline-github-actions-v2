@@ -29,7 +29,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: minha-string
+          name: ${{ github.event.inputs.nome }}
           path: artifact.txt
     
       - name: Checkout repository
