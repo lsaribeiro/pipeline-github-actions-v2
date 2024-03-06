@@ -13,6 +13,8 @@ on:
         description: 'Idade'
         required: true
 
+run-name: ${{ github.event.inputs.nome }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,8 +51,4 @@ jobs:
           git commit -m "Adicionado arquivo com dados"
           git push origin dev
 
-
-  referenced_workflows:
-    workflows:
-      - workflow: Workflow1
-        ref: .github/workflows/workflow1.yml
+  
