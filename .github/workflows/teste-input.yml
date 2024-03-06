@@ -23,6 +23,12 @@ jobs:
       IDADE: ${{ github.event.inputs.idade }}
 
     steps:
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: minha-string
+          path: artifact.txt
+    
       - name: Checkout repository
         uses: actions/checkout@v2
       
