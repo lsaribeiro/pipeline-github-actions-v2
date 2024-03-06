@@ -23,12 +23,14 @@ jobs:
           echo "Nome: ${{ github.event.inputs.nome }}" > dados.txt
           echo "Sobrenome: ${{ github.event.inputs.sobrenome }}" >> dados.txt
           echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
+          pwd
 
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Create and push branch dev
         run: |
+          pwd
           git checkout -b dev
           git add dados.txt
           git commit -m "Adicionado arquivo com dados"
