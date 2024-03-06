@@ -24,6 +24,7 @@ jobs:
           echo "Sobrenome: ${{ github.event.inputs.sobrenome }}" >> dados.txt
           echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
           pwd
+          ls -l
 
       - name: Checkout repository
         uses: actions/checkout@v2
