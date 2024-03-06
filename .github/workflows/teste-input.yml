@@ -23,6 +23,9 @@ jobs:
       IDADE: ${{ github.event.inputs.idade }}
 
     steps:
+      - name: Create String Artifact
+        run: echo "Minha pequena string" > artifact.txt
+    
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
