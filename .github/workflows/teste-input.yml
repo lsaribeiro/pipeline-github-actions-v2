@@ -20,11 +20,12 @@ jobs:
     steps:
       - name: Create file with inputs
         run: |
+          git checkout -b dev
+          ls -l
           echo "Nome: ${{ github.event.inputs.nome }}" > dados.txt
           echo "Sobrenome: ${{ github.event.inputs.sobrenome }}" >> dados.txt
           echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
           pwd
-          ls -l
           cat dados.txt
 
       - name: Checkout repository
@@ -34,7 +35,6 @@ jobs:
         run: |
           pwd
           ls -l
-          git checkout -b dev
           git status
           git add dados.txt
           git commit -m "Adicionado arquivo com dados"
