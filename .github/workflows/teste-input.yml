@@ -32,6 +32,7 @@ jobs:
         run: |
           pwd
           git checkout -b dev
+          git status
           git add dados.txt
           git commit -m "Adicionado arquivo com dados"
           git push origin dev
