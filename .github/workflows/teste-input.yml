@@ -38,6 +38,7 @@ jobs:
       - name: Create file with inputs
         run: |
           python template_jinja2.py
+          sleep 1m
 
       - name: Create and push branch dev
         run: |
