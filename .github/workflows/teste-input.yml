@@ -18,24 +18,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
       - name: Create file with inputs
         run: |
-          git checkout -b dev
-          ls -l
           echo "Nome: ${{ github.event.inputs.nome }}" > dados.txt
           echo "Sobrenome: ${{ github.event.inputs.sobrenome }}" >> dados.txt
           echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
-          pwd
-          cat dados.txt
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
 
       - name: Create and push branch dev
         run: |
-          pwd
-          ls -l
-          git status
+          git checkout -b dev
           git add dados.txt
           git commit -m "Adicionado arquivo com dados"
           git push origin dev
