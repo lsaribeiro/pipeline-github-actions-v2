@@ -25,12 +25,14 @@ jobs:
           echo "Idade: ${{ github.event.inputs.idade }}" >> dados.txt
           pwd
           ls -l
+          cat dados.txt
 
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Create and push branch dev
         run: |
+          pwd
           ls -l
           git checkout -b dev
           git status
