@@ -26,10 +26,8 @@ jobs:
 
     steps:
       - name: Print GitHub context
-        run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-    
+        run: env
+
       # - name: Upload Artifact
       #   uses: actions/upload-artifact@v2
       #   with:
