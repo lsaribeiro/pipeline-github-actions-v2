@@ -1,18 +1,18 @@
 name: Create File and Push Workflow
 
 on:
-  commit_comment
-  # workflow_dispatch:
-  #   inputs:
-  #     nome:
-  #       description: 'Nome'
-  #       required: true
-  #     sobrenome:
-  #       description: 'Sobrenome'
-  #       required: true
-  #     idade:
-  #       description: 'Idade'
-  #       required: true
+  workflow_dispatch:
+    inputs:
+      nome:
+        description: 'Nome'
+        required: true
+        ddefault: vai
+      # sobrenome:
+      #   description: 'Sobrenome'
+      #   required: true
+      # idade:
+      #   description: 'Idade'
+      #   required: true
 
 run-name: ${{ github.event.inputs.nome }}
 
