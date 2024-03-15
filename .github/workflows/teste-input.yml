@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Create String Artifact
-        run: echo ${{ fromJSON(github) }}
+        run: echo ${{ fromJSON(github.event) }}
     
       # - name: Upload Artifact
       #   uses: actions/upload-artifact@v2
