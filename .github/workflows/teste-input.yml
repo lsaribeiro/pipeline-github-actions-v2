@@ -26,6 +26,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:        
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Run Ansible playbook
+        uses: ansible/ansible-playbook@v2
+        with:
+          playbook: playbook.yml
+          # inventory: inv
+          extra-vars: |
+            variable1=value1
+            variable2=value2
+            
       - name: Print GitHub context 2
         run: echo "$GITHUB_CONTEXT"
         env:
