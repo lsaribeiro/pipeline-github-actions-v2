@@ -1,17 +1,18 @@
 name: Create File and Push Workflow
 
 on:
-  workflow_dispatch:
-    inputs:
-      nome:
-        description: 'Nome'
-        required: true
-      sobrenome:
-        description: 'Sobrenome'
-        required: true
-      idade:
-        description: 'Idade'
-        required: true
+  commit_comment: Update teste-input.yml
+  # workflow_dispatch:
+  #   inputs:
+  #     nome:
+  #       description: 'Nome'
+  #       required: true
+  #     sobrenome:
+  #       description: 'Sobrenome'
+  #       required: true
+  #     idade:
+  #       description: 'Idade'
+  #       required: true
 
 run-name: ${{ github.event.inputs.nome }}
 
