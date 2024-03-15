@@ -1,7 +1,7 @@
 name: Create File and Push Workflow
 
 on:
-  commit_comment: Update teste-input.yml
+  commit_comment
   # workflow_dispatch:
   #   inputs:
   #     nome:
