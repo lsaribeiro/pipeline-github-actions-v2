@@ -24,24 +24,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Print GitHub context
-        run: env
-        
+    steps:        
       - name: Print GitHub context 2
         run: echo "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_CONTEXT: ${{ toJson(env) }}
 
-      - name: Print GitHub context 2
-        run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ github[github.event.inputs.nome] }}
+      # - name: Print GitHub context 2
+      #   run: echo "$GITHUB_CONTEXT"
+      #   env:
+      #     GITHUB_CONTEXT: ${{ github[github.event.inputs.nome] }}
 
-      - name: Print GitHub context 2
-        run: echo "$GITHUB_CONTEXT2"
-        env:
-          GITHUB_CONTEXT2: ${{ toJson(secrets) }}
+      # - name: Print GitHub context 2
+      #   run: echo "$GITHUB_CONTEXT2"
+      #   env:
+      #     GITHUB_CONTEXT2: ${{ toJson(secrets) }}
 
       # - name: Upload Artifact
       #   uses: actions/upload-artifact@v2
