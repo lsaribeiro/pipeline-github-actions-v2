@@ -27,6 +27,16 @@ jobs:
     steps:
       - name: Print GitHub context
         run: env
+        
+      - name: Print GitHub context 2
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+
+      - name: Print GitHub context 2
+        run: echo "$GITHUB_CONTEXT2"
+        env:
+          GITHUB_CONTEXT2: ${{ toJson(secrets) }}
 
       # - name: Upload Artifact
       #   uses: actions/upload-artifact@v2
