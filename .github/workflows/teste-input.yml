@@ -26,17 +26,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:        
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
-      - name: Run Ansible playbook
-        uses: ansible/ansible-playbook@v2
+      - name: Use GitHub Script to print repository information
+        uses: actions/github-script@v4
         with:
-          playbook: playbook.yml
-          # inventory: inv
-          extra-vars: |
-            variable1=value1
-            variable2=value2
+          script: |
+            console.log(`Repository owner: ${github.context.payload.repository.owner.login}`);
+            console.log(`Repository name: ${github.context.payload.repository.name}`);
+            console.log(`Repository full name: ${github.context.payload.repository.full_name}`);
             
       - name: Print GitHub context 2
         run: echo "$GITHUB_CONTEXT"
