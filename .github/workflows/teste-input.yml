@@ -31,30 +31,30 @@ jobs:
 
     steps:
       - name: Create String Artifact
-        run: echo "Minha pequena string" > artifact.txt
+        run: echo ${{ github }}
     
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ github.event.inputs.nome }}
-          path: artifact.txt
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: ${{ github.event.inputs.nome }}
+      #     path: artifact.txt
     
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
       
-      - name: Create file with inputs
-        run: |
-          env
-          python template_jinja2.py
-          sleep 1m
+      # - name: Create file with inputs
+      #   run: |
+      #     env
+      #     python template_jinja2.py
+      #     sleep 1m
 
-      - name: Create and push branch dev
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git checkout -b dev
-          git add .
-          git commit -m "Adicionado arquivo com dados"
-          git push origin dev
+      # - name: Create and push branch dev
+      #   run: |
+      #     git config --global user.email "actions@github.com"
+      #     git config --global user.name "GitHub Actions"
+      #     git checkout -b dev
+      #     git add .
+      #     git commit -m "Adicionado arquivo com dados"
+      #     git push origin dev
 
   
